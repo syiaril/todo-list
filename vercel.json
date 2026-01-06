@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "outputDirectory": "public",
+    "outputDirectory": ".",
     "framework": null,
     "functions": {
         "api/index.php": {
@@ -9,7 +9,8 @@
     },
     "routes": [
         {
-            "handle": "filesystem"
+            "src": "/(build|assets|css|js|images|storage|favicon.ico|robots.txt)(.*)",
+            "dest": "/public/$1$2"
         },
         {
             "src": "/(.*)",
